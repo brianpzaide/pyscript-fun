@@ -1,0 +1,15 @@
+body {
+    background: lightyellow;
+}
+
+
+h1, h2 {
+    font-family: cursive;
+    text-align: center;
+}
+
+.buttontray {
+    margin: 10px;
+    padding: 8px;
+    text-align: center;
+}

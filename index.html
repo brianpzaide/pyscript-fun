@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Recommended meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+        <!-- CSS for examples -->
+        <!-- <link rel="stylesheet" href="./assets/css/examples.css" /> -->
+
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+        <!-- Custom CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+
+        <!-- for splashscreen -->
+        <style>
+            #loading { outline: none; border: none; background: transparent }
+            canvas {
+              padding: 0;
+              margin: auto;
+              display: block;
+              background: #fff;
+            }
+        </style>
+        <script type="module">
+            const loading = document.getElementById('loading');
+            addEventListener('py:ready', () => loading.close());
+            loading.showModal();
+        </script>
+
+        <title>Game Of Life</title>
+        <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    </head>
+
+  <body>
+    <dialog id="loading">
+        <h1>Loading...</h1>
+    </dialog>
+
+    <section class="pyscript">
+        <h1>Game-Of-Life</h1>
+
+        <script type="py" src="./main.py" config="./pyscript.toml"></script>
+
+        <h2 id="status"></h2>
+        
+        <div class="buttontray" ">
+            <button id="btn-reset" style="margin-right: 20px;">Reset</button>
+            <button id="btn-start-pause" style="margin-right: 20px;">Start</button>
+        </div>
+        
+            
+        <canvas id="universe" width="512" height="512"></canvas>
+
+    </section>
+    
+    
+  </body>
+</html>
