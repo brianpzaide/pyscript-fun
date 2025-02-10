@@ -13,7 +13,9 @@ cells = [0]*4096
 canvas = pydom["canvas#universe"][0]
 start_pause_button = pydom["button#btn-start-pause"][0]
 reset_button = pydom["button#btn-reset"][0]
+simulation_speed_slider = pydom["input#simulation-speed"][0]
 is_continue = Event()
+simulation_speed = 1
 
 
 def draw_universe():
@@ -72,6 +74,13 @@ def reset_universe():
     update_canvas()
     start_pause_button.html = "Start"
 
+@when("input", "#simulation-speed")
+def update_simulation_speed():
+    is_continue.clear()
+    start_pause_button.html = "Start"
+    global simulation_speed
+    simulation_speed = 1 / int(simulation_speed_slider.value)
+
 def update_canvas():
     ctx = canvas._js.getContext("2d")
     for row in range(universe_size):
@@ -86,7 +95,7 @@ def update_canvas():
 
 async def main():
     while True:
-        await asyncio.sleep(1)
+        await asyncio.sleep(simulation_speed)
         if is_continue.is_set():
             global cells
             next_generation = [0]*4096 

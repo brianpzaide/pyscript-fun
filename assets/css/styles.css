@@ -1,5 +1,6 @@
 body {
     background: lightyellow;
+    margin: 0px;
 }
 
 
@@ -9,7 +10,30 @@ h1, h2 {
 }
 
 .buttontray {
-    margin: 10px;
+    margin: auto;
     padding: 8px;
     text-align: center;
 }
+#universe{
+    margin-top: 20px;
+}
+
+.slidecontainer {
+    margin: auto;
+    width: 150px;
+    text-align: center;
+  }
+  
+  /* The slider itself */
+  .slider {
+    appearance: none;
+    width: 150px;
+    height: 5px;
+    background: rgb(243, 106, 14);
+    outline: none;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; 
+  }
